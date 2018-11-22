@@ -38,7 +38,7 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string /Users/${USER}/co
 # Don’t display the annoying prompt when quitting iTerm
 #defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-#Make Chrom
+#Make Chrome the default browser
 
 #Launch Application
 open -a "iTerm"
