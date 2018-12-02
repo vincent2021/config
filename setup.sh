@@ -32,8 +32,10 @@ killall Dock
 # Setup iTerm preference from the config PrefsCustomFolder
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string /Users/${USER}/config/iterm/
 
+# Change Key Repeat in settings
+
 # Install the a custom Solarized Dark theme for iTerm
-#open "${HOME}/.config/Solarized_vimucchi.itermcolors"
+open "${HOME}/.config/Solarized_vimucchi.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 #defaults write com.googlecode.iterm2 PromptOnQuit -bool false
