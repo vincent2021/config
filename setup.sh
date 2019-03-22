@@ -1,5 +1,3 @@
-
-
 ############
 #SystemPref#
 ############
@@ -32,21 +30,37 @@ killall Dock
 # Setup iTerm preference from the config PrefsCustomFolder
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string /Users/${USER}/config/iterm/
 
-# Change Key Repeat in settings
-
 # Install the a custom Solarized Dark theme for iTerm
 open "${HOME}/.config/Solarized_vimucchi.itermcolors"
 
-# Don’t display the annoying prompt when quitting iTerm
-#defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+# Install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-#Make Chrome the default browser
+# Copy Config file VIM/ZSH
+cp .vimrc ~
+cp .zshrc ~
+
+# Install Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+
+# Symlinksgoinfre
+ln -s /sgoinfre/goinfre/Perso/vimucchi ~/sgoinfre
+
+# Install Powerline font
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
+# Install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #Launch Application
 open -a "iTerm"
 open -a "Managed Software Center"
 #Slack configuration
 open -a "Google Chrome" 'https://42born2code.slack.com/'
-open -a "Spectacle"
 #quit terminal
 killall Terminal

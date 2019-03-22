@@ -1,8 +1,6 @@
 syntax on
 set number
 set mouse=a
-" Copy-Paste cmd: VISUAL MODE, select + t, then Cmd+V, yank yy then b 
-vnoremap t :'<,'>!pbcopy<cr>u
 
 "Vundle config
 set nocompatible              " be iMproved, required
