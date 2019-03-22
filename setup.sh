@@ -34,7 +34,7 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder -string /Users/${USER}/co
 open "${HOME}/.config/Solarized_vimucchi.itermcolors"
 
 # Install ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Copy Config file VIM/ZSH
 cp .vimrc ~
@@ -53,6 +53,10 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
+
+# Install zsh theme
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # Install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
